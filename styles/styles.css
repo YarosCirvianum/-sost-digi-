@@ -201,3 +201,16 @@ body {
 .footer strong {
     color: #77aaff;
 }
+
+.pdf-container {
+    width: 100%; /* Manté l'amplada completa */
+    max-width: 1200px; /* Amplada màxima per a una millor visualització */
+    margin: 0 auto; /* Centra el contenidor */
+    /* padding: 20px; /* Espai al voltant del PDF */ */
+}
+
+.pdf-container iframe {
+    width: 100%; /* L'iframe ocupa el 100% de l'amplada del contenidor */
+    height: 800px; /* Ajusta l'alçada si cal */
+    border: none; /* Sense bord */
+}
