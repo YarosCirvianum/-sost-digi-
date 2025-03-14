@@ -214,3 +214,11 @@ body {
     height: 800px; /* Ajusta l'alçada si cal */
     border: none; /* Sense bord */
 }
+
+.highlight-link {
+    color: #f5ea82; /* Color per enllaços seleccionats */
+}
+
+.highlight-link:visited {
+    color: #f5ea82; /* Color per enllaços visitats */
+}
