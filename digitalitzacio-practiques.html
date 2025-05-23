@@ -3,79 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOS - PDF's</title>
+    <title>DIGI - Pràctiques</title>
     <link rel="stylesheet" href="styles/styles.css">
-</head>
-	<body>
-		<header class="header">
-			<h1>DIGI - Pràctiques</h1>
-			<p>Benvingut a la segona millor assignatura del mon!</p>
-		</header>
+    <style>
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 20px 0;
+        }
 
-    <!-- MENÚ ENTRE HEADER I MAIN -->
+        .activity-card {
+            background: #24395e;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .preview-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .activity-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 3px solid #77aaff;
+        }
+
+        .preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .preview-container:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .preview-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #77aaff;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .activity-card h3 {
+            padding: 15px 20px 0;
+            color: #77aaff;
+        }
+
+        .activity-description {
+            padding: 0 20px 15px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>DIGI - Pràctiques</h1>
+        <p>Benvingut a la segona millor assignatura del mon!</p>
+    </header>
+
     <nav class="menu">
         <ul>
             <li><a href="index.html">Inici</a></li>
-            <li class="dropdown">
-                <a href="sostenibilitat-home.html">Sostenibilitat</a>
-                <ul class="dropdown-menu">
-                    <li><a href="sostenibilitat-home.html">Introducció a Sostenibilitat</a></li>
-                    <li><a href="sostenibilitat-ras.html">RA's</a></li>
-                    <li><a href="sostenibilitat-practiques.html">Pràctiques</a></li>
-                    <!-- <li><a href="sostenibilitat-practiques-pdf.html">Pràctiques PDF</a></li> -->
-                </ul>
-            </li>
             <li class="dropdown">
                 <a href="digitalitzacio-home.html">Digitalització</a>
                 <ul class="dropdown-menu">
                     <li><a href="digitalitzacio-home.html">Introducció a Digitalització</a></li>
                     <li><a href="digitalitzacio-ras.html">RA's</a></li>
                     <li><a href="digitalitzacio-practiques.html">Pràctiques</a></li>
-                    <!-- <li><a href="digitalitzacio-practiques-pdf.html">Pràctiques PDF</a></li> -->
                 </ul>
             </li>
             <li><a href="contact-info.html">Contacte</a></li>
         </ul>
     </nav>
 
-		<div class="wrapper">
-			<main class="main">
-				<section class="section">
-					<h2>Activitats Digitalització</h2>
-					<p>A continuació es poden veure totes les activitats realitzades de Sostenibilitat</p>
-					<h3>Activitat 1</h3>
-					<p>RA1-Act1-Presentació</p>
-					<p><a href="activitats/act1.pdf" download, class="highlight-link">Descarregar PDF de la Presentació</a></p>
-					<h3>Activitat 2</h3>
-					<p>RA1-Act2-Mapa mental. Tema: Sistemes Operatius.</p>
-					<p><a href="activitats/act2.png" download, class="highlight-link">Descarregar PNG del Mapa Mental</a></p>
-					<h3>Activitat 3</h3>
-					<p>RA2-Act1 Tecnologies habilitadores digitals</p>
-					<p><a href="activitats/act3.pdf" download, class="highlight-link">Descarregar PDF de la Presentació</a></p>
-					<h3>Activitat 4</h3>
-					<p>RA2-Act2 IoT</p>
-					<p><a href="activitats/act4.pdf" download, class="highlight-link">Descarregar PDF de la Presentació</a></p>
-					<h3>Activitat 5</h3>
-					<p>RA3-Act1-Cloud-núvol</p>
-					<p><a href="activitats/act5.pdf" download, class="highlight-link">Descarregar PDF del Document amb el treball</a></p>
-					<h3>Activitat 6</h3>
-					<p>RA3-Act2-Fog-Mist</p>
-					<p><a href="activitats/act6.pdf" download, class="highlight-link">Descarregar PDF de la Presentació</a></p>
-					<h3>Activitat 7</h3>
-					<p>RA4-Act1-IA</p>
-					<p><a href="activitats/act7.pdf" download, class="highlight-link">Descarregar PDF del Document amb el treball</a></p>
-					<h3>Activitat 8</h3>
-					<p>RA4-Act2-IA i Big Data</p>
-					<p><a href="activitats/act8.pdf" download, class="highlight-link">Descarregar PDF de la Presentació</a></p>
-					<p><a href="https://docs.google.com/spreadsheets/d/1oDncBwv3Hg0iSKqTB2YqBHQfcdIE-t6FhPZpOOeeym8/edit?usp=sharing", class="highlight-link">📊 Full de càlcul amb Dades de les estadístiques 📊</a></p>
-					<h3>Activitat 9 - Projecte (Cooming soon)</h3>
-					<p>Projecte...</p>
-					<p><a href="activitats/act8.pdf" download, class="highlight-link">Descarregar PDF del Projecte (Coming soon...)</a></p>
-				</section>
-			</main>
-		</div>
-		<footer class="footer">
-			<p>&copy; 2025 - Creat per <strong>Yaros</strong>. Tots els drets reservats.</p>
-		</footer>
-	</body>
+    <div class="wrapper">
+        <main class="main">
+            <section class="section">
+                <h2>Activitats Digitalització</h2>
+                <p>A continuació es poden veure totes les activitats realitzades:</p>
+                
+                <div class="activities-grid">
+                    <!-- Activitat 1 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act1-preview.jpg" alt="Vista prèvia Activitat 1" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act1.pdf" class="preview-link" download>Descarregar PDF</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 1</h3>
+                        <p class="activity-description">RA1-Act1-Presentació</p>
+                    </div>
+
+                    <!-- Activitat 2 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act2-preview.png" alt="Vista prèvia Activitat 2" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act2.png" class="preview-link" download>Descarregar PNG</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 2</h3>
+                        <p class="activity-description">RA1-Act2-Mapa mental. Tema: Sistemes Operatius.</p>
+                    </div>
+
+                    <!-- Activitat 3 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act3-preview.jpg" alt="Vista prèvia Activitat 3" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act3.pdf" class="preview-link" download>Descarregar PDF</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 3</h3>
+                        <p class="activity-description">RA2-Act1 Tecnologies habilitadores digitals</p>
+                    </div>
+
+                    <!-- Activitat 4 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act4-preview.jpg" alt="Vista prèvia Activitat 4" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act4.pdf" class="preview-link" download>Descarregar PDF</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 4</h3>
+                        <p class="activity-description">RA2-Act2 IoT</p>
+                    </div>
+
+                    <!-- Activitat 5 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act5-preview.jpg" alt="Vista prèvia Activitat 5" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act5.pdf" class="preview-link" download>Descarregar PDF</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 5</h3>
+                        <p class="activity-description">RA3-Act1-Cloud-núvol</p>
+                    </div>
+
+                    <!-- Activitat 6 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act6-preview.jpg" alt="Vista prèvia Activitat 6" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act6.pdf" class="preview-link" download>Descarregar PDF</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 6</h3>
+                        <p class="activity-description">RA3-Act2-Fog-Mist</p>
+                    </div>
+
+                    <!-- Activitat 7 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act7-preview.jpg" alt="Vista prèvia Activitat 7" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act7.pdf" class="preview-link" download>Descarregar PDF</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 7</h3>
+                        <p class="activity-description">RA4-Act1-IA</p>
+                    </div>
+
+                    <!-- Activitat 8 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act8-preview.jpg" alt="Vista prèvia Activitat 8" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act8.pdf" class="preview-link" download>Descarregar PDF</a>
+                                <a href="https://docs.google.com/spreadsheets/d/1oDncBwv3Hg0iSKqTB2YqBHQfcdIE-t6FhPZpOOeeym8/edit?usp=sharing" class="preview-link" style="margin-left: 10px;">📊 Full</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 8</h3>
+                        <p class="activity-description">RA4-Act2-IA i Big Data</p>
+                    </div>
+
+                    <!-- Activitat 9 -->
+                    <div class="activity-card">
+                        <div class="preview-container">
+                            <img src="images/previews/act9-preview.jpg" alt="Vista prèvia Activitat 9" class="activity-preview">
+                            <div class="preview-overlay">
+                                <a href="activitats/act9.pdf" class="preview-link" download>Descarregar PDF</a>
+                                <a href="activitats/act9-dafo.pdf" class="preview-link" style="margin-left: 10px;">Dafo</a>
+                                <a href="activitats/act9-plantilla-ptd.odt" class="preview-link" download>Plantilla PTD</a>
+                            </div>
+                        </div>
+                        <h3>Activitat 9 - Projecte</h3>
+                        <p class="activity-description">RA6-Act1-Projecte</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 - Creat per <strong>Yaros</strong>. Tots els drets reservats.</p>
+    </footer>
+</body>
 </html>
